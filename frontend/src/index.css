@@ -1,0 +1,141 @@
+:root {
+  --red-color: #e41b23;
+}
+
+/* --- main defaults --- */
+main {
+  min-height: 65vh;
+  font-family: 'Patua One', cursive;
+}
+body {
+  margin: 0;
+}
+.pass-vis {
+  width: 100%;
+  border-radius: 1;
+  height: 100%;
+  color: black;
+  font-size: 130%;
+  background-color: #e8f0fe;
+  margin-left: -3px;
+}
+
+.nav-icon {
+  color: white;
+  font-size: 225%;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+.nav-icon:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/*--- login Screen ---*/
+.login-banner {
+  text-align: center;
+  margin: auto;
+  padding: 2rem;
+  margin-top: 15rem;
+}
+.login-div {
+  margin-top: -10rem;
+  min-height: 105vh;
+  width: 100%;
+}
+.card-content {
+  text-align: center;
+  padding: 2rem;
+  border: none;
+}
+.form-card {
+  padding: 2rem;
+  border: none;
+}
+
+/*-- Music Section --*/
+.musicIframe {
+  padding: 1rem;
+}
+.musicRow {
+  margin: auto;
+  text-align: left;
+}
+.musicTitle {
+  padding: 5px;
+}
+.musicButton {
+  text-align: left;
+  margin-top: 5px;
+  width: 100%;
+  font-size: 2rem;
+  background-color: rgb(42, 42, 42);
+  border: none;
+}
+.musicButton:hover {
+  background-color: rgb(77, 77, 77);
+  cursor: pointer;
+  color: rgb(255, 0, 0);
+}
+.musicButton:focus {
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 0, 0);
+  box-shadow: none;
+}
+
+/* -- Event Screen -- */
+.eventCard {
+  margin: auto;
+  margin-top: 3rem;
+  background-color: rgb(31, 31, 31);
+}
+.eventTitle {
+  display: inline-block;
+  padding: 0.5rem;
+  color: rgb(158, 158, 158);
+}
+.eventVenue {
+  color: #e41b23;
+}
+.eventDetail {
+  display: inline-block;
+  font-size: 130%;
+}
+.eventButton {
+  width: 100%;
+  background-color: #e41b23;
+  border: none;
+  font-size: 120%;
+  box-shadow: none;
+  margin-top: 1rem;
+}
+.eventButton:hover {
+  background-color: #941116;
+  border: none;
+  box-shadow: none;
+}
+.eventButton:focus,
+.eventButton:active {
+  background-color: #941116;
+  border: none;
+  box-shadow: none;
+}
+
+.eventSection {
+  background-color: rgb(31, 31, 31);
+}
+.eventSection:hover {
+  border: none;
+}
+
+.mapCard {
+  height: 100%;
+  min-height: 50vh;
+}
+.embedMap {
+  width: 100%;
+  height: 150%;
+  border-radius: 5px;
+}
+
+@media (max-width: 300px) {
+}
