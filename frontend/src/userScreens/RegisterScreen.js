@@ -65,7 +65,7 @@ const RegisterScreen = ({ location, history }) => {
   return (
     <div className='login-div'>
       <FormContainer>
-        <Meta title={'Register'} />
+        <Meta title='Register' />
 
         <Card className='card-content'>
           <h3>Sign Up</h3>

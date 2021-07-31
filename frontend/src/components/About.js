@@ -5,8 +5,8 @@ const Events = () => {
   return (
     <Container>
       <h2 style={{ marginTop: '6rem' }}>About</h2>
-      <Row style={{ marginTop: '2rem' }}>
-        <Col md={12}>
+      <Row style={{ marginTop: '1rem' }}>
+        <Col>
           <h5>
             The original Foo Fighters Tribute band from the Chicagoland area
             founded in 2012.

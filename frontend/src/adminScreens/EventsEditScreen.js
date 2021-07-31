@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Meta from '../components/Meta'
 import { Form, Button, Card, Col, Row, InputGroup } from 'react-bootstrap'
 import { listTourDateDetails, updateTourDate } from '../actions/tourActions'
+import { TOUR_DATE_UPDATE_RESET } from '../constants/tourConstants'
 import FormContainer from '../components/FormContainer'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
@@ -15,7 +16,7 @@ const EventsEditScreen = ({ match, history }) => {
   const tourDateId = match.params.id
 
   // Create stateful values and functions
-  const [tourDate, setTourDate] = useState(new Date())
+  const [tourDate, setTourDate] = useState('2021-01-01')
   const [time, setTime] = useState('time')
   const [address, setAddress] = useState('address')
   const [city, setCity] = useState('city')
@@ -81,13 +82,24 @@ const EventsEditScreen = ({ match, history }) => {
       setIsActive(date.isActive)
     }
     if (updateSuccess) {
+      dispatch({
+        type: TOUR_DATE_UPDATE_RESET,
+      })
       history.push('/admin/eventsList')
     }
-  }, [dispatch, history, tourDateId, date, userInfo, updateSuccess])
+  }, [
+    dispatch,
+    history,
+    tourDateId,
+    date,
+    userInfo,
+    updateSuccess,
+    detailsSuccess,
+  ])
 
   return (
     <FormContainer>
-      <Meta title={'Product Edit Screen'} />
+      <Meta title='Event Edit Screen' />
       <Card className='form-card'>
         <h2 style={{ textAlign: 'center' }}>Edit Event</h2>
         {detailsLoading || userLoading || updateLoading ? (

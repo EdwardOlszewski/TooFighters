@@ -6,7 +6,7 @@ import TourDate from '../models/tourModel.js'
 // @access  Private/Admin
 const createTourDate = asyncHandler(async (req, res) => {
   const tourDate = new TourDate({
-    date: new Date(),
+    date: '2021-01-01',
     time: '01:00',
     address: 'Example Address',
     city: 'Example City',

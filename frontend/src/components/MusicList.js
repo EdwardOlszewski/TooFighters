@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Container, Row, Col, Button } from 'react-bootstrap'
-import songData from './songData.json'
+import songData from '../data/songData.json'
 
 const MusicList = () => {
   // Create stateful values and functions
@@ -11,6 +11,7 @@ const MusicList = () => {
       <h2 style={{ marginTop: '8rem' }}>Songs</h2>
 
       <iframe
+        title={songID}
         className='musicIframe'
         width='100%'
         height='100%'

@@ -15,9 +15,10 @@ import {
   TOUR_DATE_UPDATE_SUCCESS,
   TOUR_DATE_UPDATE_FAIL,
   TOUR_DATE_CREATE_RESET,
+  TOUR_DATE_UPDATE_RESET,
 } from '../constants/tourConstants'
 
-export const createTourDateReducer = (state = { createdDate: [] }, action) => {
+export const createTourDateReducer = (state = { createdDate: {} }, action) => {
   switch (action.type) {
     case TOUR_DATE_CREATE_REQUEST:
       return { ...state, loading: true, success: false }
@@ -32,7 +33,7 @@ export const createTourDateReducer = (state = { createdDate: [] }, action) => {
   }
 }
 
-export const listTourDatesReducer = (state = { dates: [] }, action) => {
+export const listTourDatesReducer = (state = { dates: {} }, action) => {
   switch (action.type) {
     case TOUR_DATES_REQUEST:
       return { ...state, loading: true, success: false }
@@ -58,7 +59,7 @@ export const listTourDateReducer = (state = { date: {} }, action) => {
   }
 }
 
-export const deleteTourDateReducer = (state = { deletedDate: [] }, action) => {
+export const deleteTourDateReducer = (state = { deletedDate: {} }, action) => {
   switch (action.type) {
     case TOUR_DATE_DELETE_REQUEST:
       return { ...state, loading: true, success: false }
@@ -71,7 +72,7 @@ export const deleteTourDateReducer = (state = { deletedDate: [] }, action) => {
   }
 }
 
-export const updateTourDateReducer = (state = { updatedDate: [] }, action) => {
+export const updateTourDateReducer = (state = { updatedDate: {} }, action) => {
   switch (action.type) {
     case TOUR_DATE_UPDATE_REQUEST:
       return { ...state, loading: true, success: false }
@@ -79,6 +80,8 @@ export const updateTourDateReducer = (state = { updatedDate: [] }, action) => {
       return { success: true, loading: false, updatedDate: action.payload }
     case TOUR_DATE_UPDATE_FAIL:
       return { loadng: false, error: action.payload }
+    case TOUR_DATE_UPDATE_RESET:
+      return {}
     default:
       return state
   }

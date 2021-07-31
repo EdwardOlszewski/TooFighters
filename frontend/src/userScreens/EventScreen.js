@@ -6,6 +6,7 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 import GoogleMap from '../components/GoogleMap'
 import DateFormat from '../components/DateFormat'
+import Meta from '../components/Meta'
 
 const EventScreen = ({ match }) => {
   // Assign useDispatch hook to dispatch actions
@@ -13,7 +14,7 @@ const EventScreen = ({ match }) => {
 
   // Go to the state and pull out information from eventDetails
   const tourDateDetails = useSelector((state) => state.tourDateDetails)
-  const { loading, error, success, date } = tourDateDetails
+  const { loading, error, date } = tourDateDetails
 
   // useEffect hook to do something after render
   useEffect(() => {
@@ -21,7 +22,8 @@ const EventScreen = ({ match }) => {
   }, [dispatch, match])
 
   return (
-    <Container>
+    <Container style={{ marginTop: '7rem' }}>
+      <Meta title={'TooFighters - ' + date.venue} />
       {loading ? (
         <Loader />
       ) : error ? (

@@ -18,21 +18,46 @@ const Header = () => {
   }
 
   return (
-    <Container>
-      <Navbar bg='dark' variant='dark' expand='lg' style={{ border: 'none' }}>
+    <Navbar
+      bg='dark'
+      variant='dark'
+      expand='lg'
+      fixed='top'
+      style={{ borderColor: '#0a0a0a' }}
+    >
+      <Container>
         <Navbar.Brand href='#home'>
           <Image src={logo}></Image>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>
-            <Nav.Link href='#link'>Home</Nav.Link>
-            <Nav.Link href='#link'>Events</Nav.Link>
+            <a href='/' className='navLinks'>
+              <h6 className='navText'>Home</h6>
+            </a>
+            <a href='/#about' className='navLinks'>
+              <h6 className='navText'>About</h6>
+            </a>
+            <a href='/#events' className='navLinks'>
+              <h6 className='navText'>Events</h6>
+            </a>
+            <a href='/#videos' className='navLinks'>
+              <h6 className='navText'>Videos</h6>
+            </a>
+            <a href='/#songs' className='navLinks'>
+              <h6 className='navText'>Songs</h6>
+            </a>
             {userInfo && (
               <NavDropdown
                 title={
-                  <span className='nav-links'>
-                    <i className='fas fa fa-cogs'></i> Admin
+                  <span
+                    className='navText'
+                    style={{
+                      color: 'yellow',
+                      fontSize: '120%',
+                    }}
+                  >
+                    <i className='fas fa fa-cogs'></i> Admin Settings
                   </span>
                 }
                 id='adminmenu'
@@ -48,25 +73,25 @@ const Header = () => {
           </Nav>
           <Nav className='ms-auto'>
             <div className='nav-socials'>
-              <a href='https://www.youtube.com/channel/UCzeV03hagrR7mtE30TqpQ8g?app=desktop&fbclid=IwAR0IM2Eb7dusBTrzWbndeXnxAjvwP3m70uiFx6zTteOQ9Csd7-CpEtY8JTk'>
+              <a href='https://www.youtube.com/user/toofighters'>
                 <h6 className='nav-icon'>
                   <i className='fab fa-youtube-square'></i>
                 </h6>
               </a>
 
-              <a href='https://www.facebook.com/SportsandSneakers21'>
+              <a href='https://www.facebook.com/chicagostribute'>
                 <h6 className='nav-icon'>
                   <i className='fab fa-facebook-square'></i>
                 </h6>
               </a>
 
-              <a href='https://www.instagram.com/sportsandsneakers2021'>
+              <a href='https://www.instagram.com/toofighterschicago/'>
                 <h6 className='nav-icon'>
                   <i className='fab fa-instagram-square'></i>
                 </h6>
               </a>
 
-              <a href='mailto:sportsandsneakers2021@gmail.com'>
+              <a href='mailto:joe995511@gmail.com'>
                 <h6 className='nav-icon'>
                   <i className='fas fa-envelope-square'></i>
                 </h6>
@@ -74,8 +99,8 @@ const Header = () => {
             </div>
           </Nav>
         </Navbar.Collapse>
-      </Navbar>
-    </Container>
+      </Container>
+    </Navbar>
   )
 }
 

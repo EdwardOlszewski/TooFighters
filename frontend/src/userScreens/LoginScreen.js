@@ -54,70 +54,81 @@ const LoginScreen = ({ location, history }) => {
   }, [history, userInfo, redirect])
 
   return (
-    <div className='login-div'>
-      <FormContainer>
-        <Meta title={'Login'} />
+    <FormContainer>
+      <Meta title='Login' />
 
-        <div className='login-banner'>
-          <LinkContainer to='/'>
-            <Image className='nav-links' src={logo}></Image>
-          </LinkContainer>
-        </div>
+      <div className='login-banner'>
+        <LinkContainer to='/'>
+          <Image className='nav-links' src={logo}></Image>
+        </LinkContainer>
+      </div>
 
-        <Card className='card-content'>
-          <h3>Log In</h3>
+      <Card className='card-content'>
+        <h3>Log In</h3>
+        <br />
+
+        <Form onSubmit={submitHandler}>
+          <Form.Group controlId='email'>
+            <h6 className='form-label'> Email Address</h6>
+
+            <Form.Control
+              required
+              type='email'
+              placeholder='Enter email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            ></Form.Control>
+          </Form.Group>
+
           <br />
+          <h6 className='form-label'> Password</h6>
+          <InputGroup>
+            <Form.Control
+              required
+              type={passVis}
+              placeholder='Enter password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            ></Form.Control>
+            <InputGroup.Append>
+              <InputGroup.Text className='pass-vis'>
+                <i
+                  onClick={showPassHandler}
+                  className={
+                    passVis === 'password' ? 'fas fa-eye-slash' : 'fas fa-eye'
+                  }
+                ></i>
+              </InputGroup.Text>
+            </InputGroup.Append>
+          </InputGroup>
 
-          <Form onSubmit={submitHandler}>
-            <Form.Group controlId='email'>
-              <h6 className='form-label'> Email Address</h6>
-
-              <Form.Control
-                required
-                type='email'
-                placeholder='Enter email'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
-
-            <br />
-            <h6 className='form-label'> Password</h6>
-            <InputGroup>
-              <Form.Control
-                required
-                type={passVis}
-                placeholder='Enter password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              ></Form.Control>
-              <InputGroup.Append>
-                <InputGroup.Text className='pass-vis'>
-                  <i
-                    onClick={showPassHandler}
-                    className={
-                      passVis === 'password' ? 'fas fa-eye-slash' : 'fas fa-eye'
-                    }
-                  ></i>
-                </InputGroup.Text>
-              </InputGroup.Append>
-            </InputGroup>
-
-            <br />
-            {loading ? (
-              <Loader />
-            ) : (
-              <Button type='submit' variant='primary' className='btn' block>
+          <br />
+          <br />
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              <Button
+                type='submit'
+                variant='success'
+                style={{ marginRight: '1rem' }}
+              >
                 Log In
               </Button>
-            )}
-          </Form>
 
-          {message && <Message variant='danger'>{message}</Message>}
-          {error && <Message variant='danger'>{error}</Message>}
-        </Card>
-      </FormContainer>
-    </div>
+              <a href='/'>
+                <Button variant='danger' style={{ marginLeft: '1rem' }}>
+                  Home
+                </Button>
+              </a>
+            </>
+          )}
+        </Form>
+
+        {message && <Message variant='danger'>{message}</Message>}
+        {error && <Message variant='danger'>{error}</Message>}
+      </Card>
+    </FormContainer>
   )
 }
 

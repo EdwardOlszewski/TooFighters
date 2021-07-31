@@ -64,9 +64,9 @@ const EventsListScreen = ({ history }) => {
   }, [dispatch, history, userInfo, createSuccess, createdDate, deleteSuccess])
 
   return (
-    <Container>
+    <Container style={{ marginTop: '8rem' }}>
       <Card className='card-content'>
-        <Meta title={'User List Screen'} />
+        <Meta title='Event List Screen' />
         <h1>Events</h1>
         {userLoading || createLoading || listLoading || deleteLoading ? (
           <Loader />

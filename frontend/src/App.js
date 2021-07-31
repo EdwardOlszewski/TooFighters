@@ -6,7 +6,6 @@ import Header from './components/Header'
 // User Screens
 import HomeScreen from './userScreens/HomeScreen'
 import LoginScreen from './userScreens/LoginScreen'
-import RegisterScreen from './userScreens/RegisterScreen'
 import EventScreen from './userScreens/EventScreen'
 // Admin screens
 import EventsListScreen from './adminScreens/EventsListScreen'
@@ -19,7 +18,6 @@ const App = () => {
     <Router>
       <Switch>
         <Route path='/admin' component={LoginScreen} exact />
-        <Route path='/register' component={RegisterScreen} exact />
         <Fragment>
           <Header />
           <main className='main-body'>
